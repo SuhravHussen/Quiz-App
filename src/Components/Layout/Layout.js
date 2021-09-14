@@ -5,7 +5,7 @@ const Layout = ({ children }) => (
     <>
         <Nav />
         <main className="w-full py-16 pt-0">
-            <div className="w-11/12 my-8 mx-auto">{children}</div>
+            <div className="w-11/12 my-24 mx-auto">{children}</div>
         </main>
     </>
 );
