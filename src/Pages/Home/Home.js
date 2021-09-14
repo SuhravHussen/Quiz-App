@@ -1,9 +1,11 @@
 import React from 'react';
+import Layout from '../../Components/Layout/Layout';
+import Videos from '../../Components/Videos/Videos';
 
 const Home = () => (
-    <div>
-        <h1>Home</h1>
-    </div>
+    <Layout>
+        <Videos />
+    </Layout>
 );
 
 export default Home;
