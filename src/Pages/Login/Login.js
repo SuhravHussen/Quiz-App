@@ -6,7 +6,6 @@ import { useHistory } from 'react-router';
 import Button from '../../Components/common/Button';
 import ChangeMethod from '../../Components/common/ChangeMethod';
 import TextInput from '../../Components/common/TextInput';
-import Layout from '../../Components/Layout/Layout';
 import Form from '../../Components/Sign-up/Form';
 import Illustration from '../../Components/Sign-up/Illustration';
 
@@ -17,7 +16,7 @@ const Login = () => {
         history.push('/signup');
     };
     return (
-        <Layout>
+        <>
             <h1 className="text-2xl   sm:text-5xl text-gray-600">Login with your account</h1>
             <div className="flex justify-evenly items-center">
                 <Illustration />
@@ -34,7 +33,7 @@ const Login = () => {
                     </ChangeMethod>
                 </Form>
             </div>
-        </Layout>
+        </>
     );
 };
 

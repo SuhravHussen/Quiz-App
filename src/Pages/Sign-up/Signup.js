@@ -7,7 +7,6 @@ import Button from '../../Components/common/Button';
 import ChangeMethod from '../../Components/common/ChangeMethod';
 import Checkbox from '../../Components/common/Checkbox';
 import TextInput from '../../Components/common/TextInput';
-import Layout from '../../Components/Layout/Layout';
 import Form from '../../Components/Sign-up/Form';
 import Illustration from '../../Components/Sign-up/Illustration';
 
@@ -19,7 +18,7 @@ const Signup = () => {
     };
 
     return (
-        <Layout>
+        <>
             <h1 className="text-2xl   sm:text-5xl text-gray-600">Create an account</h1>
             <div className="flex justify-evenly items-center">
                 <Illustration />
@@ -39,7 +38,7 @@ const Signup = () => {
                     </ChangeMethod>
                 </Form>
             </div>
-        </Layout>
+        </>
     );
 };
 

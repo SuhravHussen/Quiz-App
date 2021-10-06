@@ -2,6 +2,7 @@ import { faArrowAltCircleLeft, faArrowAltCircleRight } from '@fortawesome/free-s
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Slider from '@mui/material/Slider';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './progressBar.css';
 
 const ProgressBar = () => (
@@ -20,10 +21,10 @@ const ProgressBar = () => (
                 valueLabelDisplay="auto"
             />
         </div>
-        <a
+        <Link
             className="p-2 mr-1 bg-green-400 rounded-lg hover:bg-green-300
         "
-            href="etrtr"
+            to="/result"
         >
             <button type="button" className="button next">
                 <span className="mr-1">Next Question</span>
@@ -31,7 +32,7 @@ const ProgressBar = () => (
                     <FontAwesomeIcon icon={faArrowAltCircleRight} />
                 </span>
             </button>
-        </a>
+        </Link>
     </div>
 );
 
