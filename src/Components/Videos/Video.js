@@ -10,7 +10,7 @@ const Video = () => (
             </p>
             <div className="flex flex-col sm:flex-row justify-between pr-16">
                 <p className="text-sm">10 Questions</p>
-                <p>Score: Not takes yet</p>
+                <p>Score: Not taken yet</p>
             </div>
         </div>
     </a>

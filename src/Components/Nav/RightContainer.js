@@ -14,7 +14,11 @@ const RightContainer = () => (
 
         <Link to="/signup">
             {' '}
-            <span className="cursor-pointer">Sign Up</span>
+            <span className="cursor-pointer mr-2 font-semibold">Sign Up</span>
+        </Link>
+        <Link to="/login">
+            {' '}
+            <span className="cursor-pointer font-semibold">login</span>
         </Link>
     </>
 );
