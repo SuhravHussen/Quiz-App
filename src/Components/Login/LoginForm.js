@@ -1,6 +1,6 @@
 import { faLock, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
-import { useHistory } from 'react-router';
+import { useHistory, useLocation } from 'react-router';
 import { useAuth } from '../../context/AuthContext';
 import Button from '../common/Button';
 import ChangeMethod from '../common/ChangeMethod';
@@ -19,14 +19,15 @@ const LoginForm = () => {
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
     const { login } = useAuth();
-
+    const location = useLocation();
+    const { from } = location.state || { from: { pathname: '/' } };
     async function handleSubmit(e) {
         e.preventDefault();
         try {
             setError('');
             setLoading(true);
             await login(email, password);
-            history.push('/');
+            history.replace(from);
         } catch (err) {
             setLoading(false);
             console.log(err);
