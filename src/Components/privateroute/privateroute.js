@@ -9,7 +9,7 @@ function PrivateRoute({ comp, isAuthenticated, ...rest }) {
             {...rest}
             render={({ location }) =>
                 currentUser ? (
-                    comp
+                    comp()
                 ) : (
                     <Redirect
                         to={{
