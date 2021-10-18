@@ -24,6 +24,10 @@ export function AuthProvider({ children }) {
     const [videoError, setVideoError] = useState(false);
     const [videos, setVideos] = useState([]);
     const [hasMore, setHasMore] = useState(true);
+    const [questionsLoading, setQuestionsLoading] = useState(true);
+    const [questionsError, setQuestionsError] = useState(false);
+    const [questions, setQuestions] = useState([]);
+
     useEffect(() => {
         const auth = getAuth();
         const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -51,14 +55,12 @@ export function AuthProvider({ children }) {
     }
 
     // login method
-
     function login(email, password) {
         const auth = getAuth();
         return signInWithEmailAndPassword(auth, email, password);
     }
 
     // logout method
-
     function logout() {
         const auth = getAuth();
         return signOut(auth);
@@ -101,6 +103,34 @@ export function AuthProvider({ children }) {
         }, [page]);
     }
 
+    // fetch questions
+    async function useFetchQuestions(videoId) {
+        useEffect(() => {
+            async function getQuestions() {
+                const db = getDatabase();
+                const quizRef = ref(db, `quiz/${videoId}/questions`);
+                const quizQuery = query(quizRef);
+
+                try {
+                    setQuestionsError(false);
+                    setQuestionsLoading(true);
+
+                    const result = await get(quizQuery);
+                    setQuestionsLoading(false);
+
+                    if (result.exists()) {
+                        setQuestions(() => [...Object.values(result.val())]);
+                    }
+                } catch (err) {
+                    console.log(err);
+                    setQuestionsLoading(false);
+                    setQuestionsError(true);
+                }
+            }
+            getQuestions();
+        }, [videoId]);
+    }
+
     const value = {
         currentUser,
         signup,
@@ -111,6 +141,10 @@ export function AuthProvider({ children }) {
         videoError,
         videos,
         hasMore,
+        questions,
+        questionsError,
+        questionsLoading,
+        useFetchQuestions,
     };
 
     return <AuthContext.Provider value={value}>{!loading && children}</AuthContext.Provider>;

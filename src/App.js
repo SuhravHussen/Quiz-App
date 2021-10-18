@@ -16,10 +16,10 @@ function App() {
                 <Layout>
                     <Switch>
                         <Route exact path="/" component={Home} />
-                        <PublicRoute exact path="/signup" comp={Signup} />
-                        <PublicRoute exact path="/login" comp={Login} />
-                        <PrivateRoute exact path="/quiz" comp={Quiz} />
-                        <PrivateRoute exact path="/result" comp={Result} />
+                        <PublicRoute exact path="/signup" component={Signup} />
+                        <PublicRoute exact path="/login" component={Login} />
+                        <PrivateRoute exact path="/quiz/:id" component={Quiz} />
+                        <PrivateRoute exact path="/result/:id" component={Result} />
                     </Switch>
                 </Layout>
             </AuthProvider>

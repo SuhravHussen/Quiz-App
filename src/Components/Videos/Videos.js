@@ -17,12 +17,13 @@ const Videos = () => {
                 <InfiniteScroll
                     dataLength={videos.length}
                     hasMore={hasMore}
+                    loader="Loading..."
                     next={() => setPage(page + 8)}
                     className=" w-11/12 sm:w-full my-12 mx-auto flex justify-center flex-wrap"
                 >
                     {videos.map((video) =>
                         video.noq > 0 ? (
-                            <Link to="/quiz" key={video.youtubeID}>
+                            <Link to={`/quiz/${video.youtubeID}`} key={video.youtubeID}>
                                 <Video title={video.title} id={video.youtubeID} noq={video.noq} />
                             </Link>
                         ) : (

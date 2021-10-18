@@ -1,7 +1,7 @@
 import { Redirect, Route } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 
-function PrivateRoute({ comp, isAuthenticated, ...rest }) {
+function PrivateRoute({ component: Component, isAuthenticated, ...rest }) {
     const { currentUser } = useAuth();
 
     return (
@@ -9,7 +9,7 @@ function PrivateRoute({ comp, isAuthenticated, ...rest }) {
             {...rest}
             render={({ location }) =>
                 currentUser ? (
-                    comp()
+                    <Component />
                 ) : (
                     <Redirect
                         to={{

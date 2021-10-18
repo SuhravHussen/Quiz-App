@@ -42,7 +42,17 @@
         "endOfLine": "auto"
       }
     ],
-    "react/jsx-props-no-spreading": 0
+    "react/jsx-props-no-spreading": 0,
+    "react/jsx-no-bind": [
+      0,
+      {
+        "ignoreDOMComponents": 0,
+        "ignoreRefs": 0,
+        "allowArrowFunctions": 0,
+        "allowFunctions": 0,
+        "allowBind": 0
+      }
+    ]
   },
   "plugins": ["prettier", "react", "react-hooks"]
 }
