@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import image from '../../assets/success.png';
 import classes from './summary.module.css';
 
-const Summary = () => {
+const Summary = ({ score, noq }) => {
     const [loading] = useState(false);
     const [error] = useState(false);
 
@@ -11,7 +11,7 @@ const Summary = () => {
             <div className={classes.point}>
                 <p className={classes.score}>
                     Your score is <br />
-                    10 out of 10
+                    {score} out of {noq * 5}
                 </p>
             </div>
 

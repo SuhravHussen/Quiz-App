@@ -27,7 +27,7 @@ const ProgressBar = ({ next, previous, progress, handleSubmit }) => (
             to="/result"
         >
             <button type="button" className="button next">
-                <span className="mr-1">Next Question</span>
+                <span className="mr-1">{progress === 100 ? 'Submit' : 'next question'}</span>
                 <span className="icon">
                     <FontAwesomeIcon icon={faArrowAltCircleRight} />
                 </span>

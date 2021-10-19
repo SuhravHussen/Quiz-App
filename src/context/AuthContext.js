@@ -27,7 +27,9 @@ export function AuthProvider({ children }) {
     const [questionsLoading, setQuestionsLoading] = useState(true);
     const [questionsError, setQuestionsError] = useState(false);
     const [questions, setQuestions] = useState([]);
-
+    const [answerLoading, setAnswersLoading] = useState(true);
+    const [answersError, setAnswersError] = useState(false);
+    const [answers, setAnswers] = useState([]);
     useEffect(() => {
         const auth = getAuth();
         const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -131,6 +133,34 @@ export function AuthProvider({ children }) {
         }, [videoId]);
     }
 
+    // fetch answers
+    async function useAnswers(videoId) {
+        useEffect(() => {
+            async function getQuestions() {
+                const db = getDatabase();
+                const answerRef = ref(db, `answers/${videoId}/questions`);
+                const answerQuery = query(answerRef);
+
+                try {
+                    setAnswersError(false);
+                    setAnswersLoading(true);
+
+                    const result = await get(answerQuery);
+                    setAnswersLoading(false);
+
+                    if (result.exists()) {
+                        setAnswers(() => [...Object.values(result.val())]);
+                    }
+                } catch (err) {
+                    console.log(err);
+                    setAnswersLoading(false);
+                    setAnswersError(true);
+                }
+            }
+            getQuestions();
+        }, [videoId]);
+    }
+
     const value = {
         currentUser,
         signup,
@@ -145,6 +175,10 @@ export function AuthProvider({ children }) {
         questionsError,
         questionsLoading,
         useFetchQuestions,
+        answers,
+        answersError,
+        answerLoading,
+        useAnswers,
     };
 
     return <AuthContext.Provider value={value}>{!loading && children}</AuthContext.Provider>;
