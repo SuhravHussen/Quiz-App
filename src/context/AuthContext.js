@@ -87,7 +87,6 @@ export function AuthProvider({ children }) {
                     // request firebase api request
                     const result = await get(videoQuery);
                     setVideoLoading(false);
-                    console.log(Object.values(result.val()), 'shdjsdh');
 
                     if (result.exists()) {
                         setVideos((prv) => [...prv, ...Object.values(result.val())]);
