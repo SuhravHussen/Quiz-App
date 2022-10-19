@@ -63,8 +63,8 @@ Start the server
 
 ## Screenshots
 
-![Home page Screenshot](https://awesomescreenshot.s3.amazonaws.com/image/2176177/33216361-98344355edf39a99d452f0e4417e21be.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20221009%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221009T061522Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=ec95366b27ed50573e01f423f714f9eb9999984a3f744cae99d459fc5949e42e)
+![Home page](https://i.ibb.co/4YpRmvL/Quiz-App.png)
 ---
-![Signup page Screenshot](https://awesomescreenshot.s3.amazonaws.com/image/2176177/33216378-f3952c37a104badb5f040e97708df27b.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20221009%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221009T061622Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=f677a156a462404123d58e62c7d69268f362600291e614f13485afe068145488)
+![Signup page](https://i.ibb.co/k8pnTfj/Quiz-App-2.png)
 ---
-![Quiz Screenshot](https://awesomescreenshot.s3.amazonaws.com/image/2176177/33216370-1665ffb4807006cf6ee4388bf7eecf09.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20221009%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221009T061713Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=4574167665c76ebc359a6ca2ce217dfdfc07963ab5ecec970a9145e2e0e1600b)
+![Quiz Screenshot](https://i.ibb.co/VW0CKnR/Quiz-App-1.png)
